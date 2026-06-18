@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tugas Siti Arfah</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap');
+
+  :root{
+    --paper: #f6efe2;
+    --paper-deep: #ece1cb;
+    --ink: #2e2a24;
+    --ink-soft: #6b6253;
+    --rule: #c9bba0;
+    --modul: #8a6d4f;
+    --modul-bg: #efe3ce;
+    --ppt: #b3503a;
+    --ppt-bg: #f2ddd2;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding: 32px 20px;
+    font-family:'Inter', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 18% 12%, rgba(255,255,255,0.5), transparent 40%),
+      radial-gradient(circle at 85% 88%, rgba(255,255,255,0.35), transparent 45%),
+      linear-gradient(180deg, var(--paper) 0%, var(--paper-deep) 100%);
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+  }
+
+  /* subtle paper grain via noise-like layered dots */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image: radial-gradient(rgba(46,42,36,0.035) 1px, transparent 1px);
+    background-size: 14px 14px;
+    pointer-events:none;
+    z-index:0;
+  }
+
+  /* faint ruled lines like notebook paper, only in background */
+  body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 37px,
+      rgba(138,109,79,0.07) 38px
+    );
+    pointer-events:none;
+    z-index:0;
+  }
+
+  .sheet{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width: 440px;
+    background: rgba(255, 252, 245, 0.72);
+    border: 1px solid rgba(180,160,120,0.4);
+    border-radius: 22px;
+    padding: 44px 34px 38px;
+    backdrop-filter: blur(6px);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.6) inset,
+      0 18px 40px -18px rgba(70,55,30,0.35);
+  }
+
+  .eyebrow{
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-align:center;
+    margin: 0 0 10px;
+  }
+
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size: clamp(28px, 6vw, 34px);
+    line-height:1.15;
+    text-align:center;
+    margin: 0 0 6px;
+    color: var(--ink);
+  }
+
+  .subtitle{
+    text-align:center;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0 0 30px;
+  }
+
+  .divider{
+    width: 64px;
+    height: 1px;
+    background: var(--rule);
+    margin: 0 auto 30px;
+  }
+
+  .links{
+    display:flex;
+    flex-direction:column;
+    gap: 14px;
+  }
+
+  .card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    text-decoration:none;
+    color: var(--ink);
+    background: #fffdf8;
+    border: 1px solid rgba(180,160,120,0.35);
+    border-radius: 14px;
+    padding: 16px 18px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .card:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -12px rgba(70,55,30,0.3);
+    border-color: rgba(180,160,120,0.6);
+  }
+
+  .card:focus-visible{
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+  }
+
+  .icon{
+    flex: 0 0 auto;
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+  }
+
+  .icon.modul{ background: var(--modul-bg); color: var(--modul); }
+  .icon.ppt{ background: var(--ppt-bg); color: var(--ppt); }
+
+  .card-text{ flex:1; }
+
+  .card-title{
+    font-weight:600;
+    font-size: 15px;
+    margin:0 0 2px;
+  }
+
+  .card-desc{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    margin:0;
+  }
+
+  .arrow{
+    color: var(--ink-soft);
+    font-size: 16px;
+    transition: transform 0.18s ease;
+  }
+
+  .card:hover .arrow{ transform: translateX(3px); }
+
+  footer{
+    text-align:center;
+    margin-top: 30px;
+    font-size: 11.5px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .card, .arrow{ transition: none; }
+  }
+</style>
+</head>
+<body>
+  <main class="sheet">
+    <p class="eyebrow">Tugas Sekolah</p>
+    <h1>Siti Arfah</h1>
+    <p class="subtitle">Kumpulan berkas untuk tugas ini</p>
+    <div class="divider"></div>
+
+    <div class="links">
+      <a class="card" href="https://sitiarfah.my.canva.site/cbjwa9e1k4kv43jk" target="_blank" rel="noopener noreferrer">
+        <span class="icon modul">M</span>
+        <span class="card-text">
+          <p class="card-title">Modul</p>
+          <p class="card-desc">Buka dokumen modul</p>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+
+      <a class="card" href="https://ariny-rizkyna.my.canva.site/aplikasi-tanpa-judul" target="_blank" rel="noopener noreferrer">
+        <span class="icon ppt">P</span>
+        <span class="card-text">
+          <p class="card-title">PPT</p>
+          <p class="card-desc">Buka presentasi</p>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+
+    <footer>Dibuat untuk keperluan tugas</footer>
+  </main>
+</body>
+</html>
